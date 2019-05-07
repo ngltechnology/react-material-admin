@@ -4,23 +4,32 @@
 
 ### package.jsonに書いてあるライブラリをインストールする
 `$ yarn`
+
 or
+
 `$ npm install`
+
 
 ### 実行する
  `$ yarn start`
 
+
 ### git flowを始める
 `$ git flow init`
+
+
 全部Enter
 
 ### 作業を始める
 GitHubのissueを立てる。
 
 featureブランチを切る
+
 `$ git flow feature start BRANCH_NAME`
 
+
 commitをする
+
 `$ git commit -m "COMMIT_MESSAGE"`
 
 
