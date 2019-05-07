@@ -1,3 +1,16 @@
+# 開発を始める
+
+`$ git clone https://github.com/ngltechnology/react-material-admin.git`
+
+### package.jsonに書いてあるライブラリをインストールする
+`$ yarn`
+or
+`$ npm install`
+
+### 実行する
+ `$ yarn start`
+
+
 # React Material Admin — Material-UI Dashboard Template
 Built with [React](https://facebook.github.io/react/), [Material-UI](https://material-ui.com), [React Router](https://reacttraining.com/react-router/), [Redux](http://redux.js.org/).
 **No jQuery and Bootstrap!**
