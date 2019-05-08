@@ -1,0 +1,13 @@
+secrets:
+  - kmsKeyName: projects/freeworks-9bb68/locations/global/keyRings/build-keyring/cryptoKeys/FIREBASE-TOKEN
+    secretEnv:
+     FIREBASE_TOKEN: CiQAMXo0kYV9kZPOTRlGr9ZcOx8DF9T2BZf1WDyo0NAHqHRS+zASVgCroH+toyYIX8CHwa0ihM9wWin/vuRoN5EqMhKn7epS5L3+mogdPBBmUml64mZQsDUgtp2Wz6WWIF2iJiLbxIGaaGtHrlMZH5HC
+bstHZbP1mpevy7b7
+steps:
+- id: 'Generate html'
+  name: 'publysher/hugo'
+  args: ['hugo']
+- id: "Deploy to Firebase Hosting"
+  name: 'gcr.io/$PROJECT_ID/firebase'
+  args: ['deploy']
+  secretEnv: ['FIREBASE_TOKEN']
