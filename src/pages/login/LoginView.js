@@ -12,13 +12,13 @@ import {
 } from "@material-ui/core";
 import classnames from "classnames";
 
-import logo from "./logo.svg";
+import fwlogo from "./fwlogo.png";
 import google from "../../images/google.svg";
 
 const Login = ({ classes, ...props }) => (
   <Grid container className={classes.container}>
     <div className={classes.logotypeContainer}>
-      <img src={logo} alt="logo" className={classes.logotypeImage} />
+      <img src={fwlogo} alt="logo" className={classes.logotypeImage} />
       <Typography className={classes.logotypeText}>Freeworks Cloud</Typography>
     </div>
     <div className={classes.formContainer}>
@@ -207,7 +207,7 @@ const Login = ({ classes, ...props }) => (
         )}
       </div>
       <Typography color="primary" className={classes.copyright}>
-        © 2014-2019 Flatlogic, LLC. All rights reserved.
+        © 2019 Freeworks, LLC. All rights reserved.
       </Typography>
     </div>
   </Grid>
