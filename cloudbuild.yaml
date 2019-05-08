@@ -5,8 +5,8 @@ secrets:
 bstHZbP1mpevy7b7
 steps:
 - id: 'Generate html'
-  name: 'publysher/hugo'
-  args: ['hugo']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
 - id: "Deploy to Firebase Hosting"
   name: 'gcr.io/$PROJECT_ID/firebase'
   args: ['deploy']
