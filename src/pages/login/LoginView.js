@@ -207,7 +207,7 @@ const Login = ({ classes, ...props }) => (
         )}
       </div>
       <Typography color="primary" className={classes.copyright}>
-        © 2019 Freeworks, LLC. All rights reserved.
+        © 2019 Freeworks, LLC.
       </Typography>
     </div>
   </Grid>
