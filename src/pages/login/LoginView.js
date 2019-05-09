@@ -38,7 +38,7 @@ const Login = ({ classes, ...props }) => (
             <Typography variant="h1" className={classes.greeting}>
               Good Morning, User
             </Typography>
-            <Button size="large" className={classes.googleButton}>
+            <Button size="large" className={classes.googleButton} onClick={props.googleLogin} >
               <img src={google} alt="google" className={classes.googleIcon} />
               &nbsp;Sign in with Google
             </Button>

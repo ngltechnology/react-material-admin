@@ -38,6 +38,9 @@ export default compose(
     },
     handleLoginButtonClick: props => () => {
       props.loginUser(props.loginValue, props.passwordValue);
+    },
+    googleLogin: props => () => {
+      
     }
   }),
   lifecycle({
