@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import LoginView from "./LoginView";
 import { loginUser, resetError } from "./LoginState";
 
+import { firebase } from "firebase/app"
+
 export default compose(
   connect(
     state => ({
@@ -40,7 +42,8 @@ export default compose(
       props.loginUser(props.loginValue, props.passwordValue);
     },
     googleLogin: props => () => {
-      
+      let provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithRedirect(provider)
     }
   }),
   lifecycle({
