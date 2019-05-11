@@ -1,3 +1,7 @@
+import firebase from "firebase/app"
+import "firebase/auth"
+import { authentication } from "../firebase"
+
 export const initialState = {
   isLoading: false,
   isAuthenticated: !!localStorage.getItem("id_token"),
@@ -10,6 +14,8 @@ export const LOGIN_FAILURE = "Login/LOGIN_FAILURE";
 export const RESET_ERROR = "Login/RESET_ERROR";
 export const LOGIN_USER = "Login/LOGIN_USER";
 export const SIGN_OUT_SUCCESS = "Login/SIGN_OUT_SUCCESS";
+export const GOOGLE_LOGIN_SUCCESS = "GOOGLE_LOGIN_SUCCESS"
+export const GOOGLE_LOGIN_ERROR = "GOOGLE_LOGIN_ERROR"
 
 export const startLogin = () => ({
   type: START_LOGIN
@@ -27,6 +33,19 @@ export const resetError = () => ({
   type: RESET_ERROR
 });
 
+export const googleLoginSuccess = user => ({
+  type: GOOGLE_LOGIN_SUCCESS,
+  payload: {
+    uid: user.uid,
+    displayName: user.displayName,
+    email: user.email
+  }
+})
+export const googleLoginError = error => ({
+  type: GOOGLE_LOGIN_ERROR,
+  payload: error
+})
+
 export const loginUser = (login, password) => dispatch => {
   dispatch(startLogin());
 
@@ -39,6 +58,17 @@ export const loginUser = (login, password) => dispatch => {
     dispatch(loginFailure());
   }
 };
+
+export const googleLogin = dispatch => {
+  let provider = new firebase.auth.GoogleAuthProvider()
+  authentication.signInWithPopup(provider)
+    .then( user => {
+      dispatch(googleLoginSuccess(user))
+    })
+    .catch( error => {
+      dispatch(googleLoginError(error))
+    })
+}
 
 export const signOutSuccess = () => ({
   type: SIGN_OUT_SUCCESS
@@ -78,6 +108,14 @@ export default function LoginReducer(state = initialState, { type, payload }) {
         ...state,
         isAuthenticated: false
       };
+    case GOOGLE_LOGIN_SUCCESS:
+      return {
+        ...state,
+        currentUser: payload,
+      }
+    case GOOGLE_LOGIN_ERROR:
+      console.log(payload.error)
+      return state
     default:
       return state;
   }

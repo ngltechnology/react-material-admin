@@ -13,13 +13,15 @@ import {
 import classnames from "classnames";
 
 import fwlogo from "./fwlogo.png";
+import fwicon from "./FREEWORKS_ww.png"
 import google from "../../images/google.svg";
 
 const Login = ({ classes, ...props }) => (
   <Grid container className={classes.container}>
     <div className={classes.logotypeContainer}>
       <img src={fwlogo} alt="logo" className={classes.logotypeImage} />
-      <Typography className={classes.logotypeText}>Freeworks Cloud</Typography>
+      <img src={fwicon} alt="logo" />
+      {/* <Typography className={classes.logotypeText}>Freeworks Cloud</Typography> */}
     </div>
     <div className={classes.formContainer}>
       <div className={classes.form}>

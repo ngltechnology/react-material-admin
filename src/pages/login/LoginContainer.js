@@ -3,9 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import LoginView from "./LoginView";
-import { loginUser, resetError } from "./LoginState";
-
-import { firebase } from "firebase/app"
+import { loginUser, resetError, googleLogin } from "./LoginState";
 
 export default compose(
   connect(
@@ -14,7 +12,7 @@ export default compose(
       isAuthenticated: state.login.isAuthenticated,
       error: state.login.error
     }),
-    { loginUser, resetError }
+    { loginUser, resetError, googleLogin }
   ),
   withRouter,
   withState("activeTabId", "setActiveTabId", 0),
@@ -41,11 +39,8 @@ export default compose(
     handleLoginButtonClick: props => () => {
       props.loginUser(props.loginValue, props.passwordValue);
     },
-    googleLogin: props => () => {
-      let provider = new firebase.auth.GoogleAuthProvider()
-      firebase.auth().signInWithRedirect(provider)
-    }
-  }),
+    googleLogin: props => () => props.googleLogin()
+    }),
   lifecycle({
     componentWillReceiveProps(nextProps) {
       if (!this.props.error && nextProps.error) {

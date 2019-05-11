@@ -27,7 +27,7 @@ const structure = [
   { id: 3, label: 'Notifications', link: '/app/notifications', icon: <NotificationsIcon />},
   {
     id: 4,
-    label: 'UI Elements',
+    label: 'UIElements',
     link: '/app/ui',
     icon: <UIElementsIcon />,
     children: [
