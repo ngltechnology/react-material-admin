@@ -6,25 +6,25 @@ import {
   withStyles } from "@material-ui/core";
 import {
   Home as HomeIcon,
-  NotificationsNone as NotificationsIcon,
-  FormatSize as TypographyIcon,
+  Notes as NotificationsIcon,
   FilterNone as UIElementsIcon,
-  BorderAll as TableIcon,
+  AccountBox as TableIcon,
   QuestionAnswer as SupportIcon,
   LibraryBooks as LibraryIcon,
   HelpOutline as FAQIcon,
   ArrowBack as ArrowBackIcon,
 } from "@material-ui/icons";
+import CreateIcon from "@material-ui/icons/Create"
 import classNames from 'classnames';
 
 import SidebarLink from './components/SidebarLink/SidebarLinkContainer';
-import Dot from './components/Dot';
+
 
 const structure = [
-  { id: 0, label: 'Dashboard', link: '/app/dashboard', icon: <HomeIcon /> },  //{ id: 1, label: 'Typography', link: '/app/typography', icon: <TypographyIcon /> },
-  { id: 1, label: 'Data', link: '/app/typography', icon: <TypographyIcon /> },
-  { id: 2, label: 'Tables', link: '/app/tables', icon: <TableIcon /> },
-  { id: 3, label: 'Notifications', link: '/app/notifications', icon: <NotificationsIcon />},
+  { id: 0, label: 'Home', link: '/app/dashboard', icon: <HomeIcon /> }, 
+  { id: 1, label: 'Request', link: '/app/typography', icon: <CreateIcon /> },
+  { id: 2, label: 'Document', link: '/app/notifications', icon: <NotificationsIcon />},
+  { id: 4, label: 'Staffs', link: '/app/tables', icon: <TableIcon /> },
   {
     id: 4,
     label: 'UIElements',
@@ -42,10 +42,6 @@ const structure = [
   { id: 8, label: 'Support', link: '', icon: <SupportIcon /> },
   { id: 9, label: 'FAQ', link: '', icon: <FAQIcon />},
   { id: 10, type: 'divider' },
-  { id: 11, type: 'title', label: 'PROJECTS' },
-  { id: 12, label: 'My recent', link: '', icon: <Dot size="large" color="warning" /> },
-  { id: 13, label: 'Starred', link: '', icon: <Dot size="large" color="primary" /> },
-  { id: 14, label: 'Background', link: '', icon: <Dot size="large" color="secondary" /> },
 ];
 
 const SidebarView = ({ classes, theme, toggleSidebar, isSidebarOpened, isPermanent, location }) => {

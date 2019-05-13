@@ -80,7 +80,7 @@ const PieChartData = [
 const Dashboard = ({ classes, theme, ...props }) => {
   return (
     <React.Fragment>
-      <PageTitle title="Dashboard" button="Latest Reports" />
+      <PageTitle title="Home" button="Latest Reports" />
       <Grid container spacing={32}>
         <Grid item lg={3} md={4} sm={6} xs={12}>
           <Widget
