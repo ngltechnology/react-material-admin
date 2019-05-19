@@ -9,18 +9,21 @@ const styles = theme => ({
   postCard: {
 		display: 'flex',
 		flexWrap: 'wrap',
+		textAlign: 'center',
 		padding: "1vw",
 		width: '35%',
 	},
 	paymentCard: {
 		display: 'flex',
 		flexWrap: 'wrap',
+		textAlign: 'center',
 		padding: "1vw",
 		width: '35%',
   },
   textField: {
-    marginLeft: theme.spacing.unit,
-		marginRight: theme.spacing.unit,
+		margin: "20px auto ",
+    // marginLeft: theme.spacing.unit,
+		// marginRight: theme.spacing.unit,
 		width: '75%',
   },
   dense: {
