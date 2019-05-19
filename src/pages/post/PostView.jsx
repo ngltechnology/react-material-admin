@@ -6,7 +6,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
-  container: {
+  postCard: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		padding: "1vw",
+		width: '35%',
+	},
+	paymentCard: {
 		display: 'flex',
 		flexWrap: 'wrap',
 		padding: "1vw",
@@ -15,7 +21,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
 		marginRight: theme.spacing.unit,
-		width: '35%',
+		width: '75%',
   },
   dense: {
     marginTop: 16,
@@ -62,7 +68,7 @@ class OutlinedTextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+			<div>
 			<Card className={classes.postCard}>
         <TextField
           id="outlined-name"
@@ -234,7 +240,7 @@ class OutlinedTextFields extends React.Component {
           variant="outlined"
         />  
 				</Card>
-      </form>
+				</div>
     );
   }
 }
