@@ -22,7 +22,7 @@ import SidebarLink from './components/SidebarLink/SidebarLinkContainer';
 
 const structure = [
   { id: 0, label: 'Home', link: '/app/dashboard', icon: <HomeIcon /> }, 
-  { id: 1, label: 'Request', link: '/app/typography', icon: <CreateIcon /> },
+  { id: 1, label: 'Request', link: '/app/post', icon: <CreateIcon /> },
   { id: 2, label: 'Document', link: '/app/notifications', icon: <NotificationsIcon />},
   { id: 4, label: 'Staffs', link: '/app/tables', icon: <TableIcon /> },
   {

@@ -8,10 +8,12 @@ import Sidebar from '../Sidebar';
 
 // pages
 import Dashboard from '../../pages/dashboard';
+import Post from '../../pages/post';
 import Maps from '../../pages/maps';
 import Tables from '../../pages/tables';
 import Icons from '../../pages/icons';
 import Charts from '../../pages/charts';
+
 
 const Layout = ({ classes, isSidebarOpened, toggleSidebar }) => (
   <div className={classes.root}>
@@ -24,7 +26,7 @@ const Layout = ({ classes, isSidebarOpened, toggleSidebar }) => (
           <div className={classes.fakeToolbar} />
           <Switch>
             <Route path="/app/dashboard" component={Dashboard} />
-            <Route path="/app/typography" component={Dashboard} />
+            <Route path="/app/post" component={Post} />
             <Route path="/app/tables" component={Tables} />
             <Route path="/app/notifications" component={Tables} />
             <Route exact path="/app/ui" render={() => <Redirect to="/app/ui/icons" />} />
