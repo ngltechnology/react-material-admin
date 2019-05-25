@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GrowCard from "./Card"
 import {withStyles} from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container'
 import Card from '@material-ui/core/Card'
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -23,8 +24,8 @@ const styles = theme => ({
   },
   textField: {
 		margin: "20px auto ",
-    // marginLeft: theme.spacing.unit,
-		// marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing.unit,
+		marginRight: theme.spacing.unit,
 		width: '75%',
   },
   dense: {
@@ -54,7 +55,7 @@ const currencies = [
   },
 ];
 
-class OutlinedTextFields extends React.Component {
+class Post extends React.Component {
   state = {
     name: '',
     age: '',
@@ -73,7 +74,7 @@ class OutlinedTextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-			<div>
+			<Container>
 			<Card className={classes.postCard}>
         <TextField
           name="name"
@@ -250,13 +251,13 @@ class OutlinedTextFields extends React.Component {
           rewards={this.state.name}
           photoURL={this.state.name} 
         />
-				</div>
+				</Container>
     );
   }
 }
 
-OutlinedTextFields.propTypes = {
+Post.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OutlinedTextFields);
+export default withStyles(styles)(Post);
