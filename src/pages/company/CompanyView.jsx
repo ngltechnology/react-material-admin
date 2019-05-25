@@ -1,10 +1,11 @@
 import React,{Fragment} from "react"
-import form from "./Form"
+import FormCardContainer from "./FormContainer"
 
-export default (props) => {
+ const Company = (props) => {
   return(
     <Fragment>
-      <form/>
+      <FormCardContainer/>
     </Fragment>
   )
 }
+export default Company

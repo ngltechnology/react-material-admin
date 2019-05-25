@@ -1,6 +1,6 @@
 {
-  "name": "Post",
+  "name": "Company",
   "version": "1.0.0",
   "private": true,
-  "main": "PostContainer.js"
+  "main": "CompanyView.jsx"
 }
