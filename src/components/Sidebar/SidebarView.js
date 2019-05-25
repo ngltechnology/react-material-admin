@@ -38,7 +38,7 @@ const structure = [
   },
   { id: 5, type: 'divider' },
   { id: 6, type: 'title', label: 'HELP' },
-  { id: 7, label: 'Library', link: '', icon: <LibraryIcon /> },
+  { id: 7, label: 'Company', link: '/app/company', icon: <LibraryIcon /> },
   { id: 8, label: 'Support', link: '', icon: <SupportIcon /> },
   { id: 9, label: 'FAQ', link: '', icon: <FAQIcon />},
   { id: 10, type: 'divider' },
