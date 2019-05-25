@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GrowCard from "./Card"
 import {withStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card'
 import MenuItem from '@material-ui/core/MenuItem';
@@ -11,7 +12,7 @@ const styles = theme => ({
 		flexWrap: 'wrap',
 		textAlign: 'center',
 		padding: "1vw",
-		width: '35%',
+    width: '35%',
 	},
 	paymentCard: {
 		display: 'flex',
@@ -55,7 +56,7 @@ const currencies = [
 
 class OutlinedTextFields extends React.Component {
   state = {
-    name: 'Cat in the Hat',
+    name: '',
     age: '',
     multiline: 'Controlled',
     currency: 'EUR',
@@ -63,8 +64,9 @@ class OutlinedTextFields extends React.Component {
 
   handleChange = name => event => {
     this.setState({
-      [name]: event.target.value,
+      [event.target.name]: event.target.value,
     });
+    console.log(event.target.value);
   };
 
   render() {
@@ -74,21 +76,21 @@ class OutlinedTextFields extends React.Component {
 			<div>
 			<Card className={classes.postCard}>
         <TextField
+          name="name"
           id="outlined-name"
           label="依頼元"
           className={classes.textField}
-          value={this.state.name}
           onChange={this.handleChange('name')}
           margin="normal"
 					variant="outlined"
 					fullWidth
         />
-
         <TextField
           id="outlined-contents"
           label="内容"
           defaultValue="foo"
           className={classes.textField}
+          onChange={this.handleChange('name')}
           margin="normal"
 					variant="outlined"
 					fullWidth
@@ -243,6 +245,11 @@ class OutlinedTextFields extends React.Component {
           variant="outlined"
         />  
 				</Card>
+        <GrowCard 
+          name={this.state.name} 
+          rewards={this.state.name}
+          photoURL={this.state.name} 
+        />
 				</div>
     );
   }
