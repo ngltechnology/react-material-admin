@@ -9,7 +9,7 @@ import CardActions from "@material-ui/core/CardActions"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import CardMedia from "@material-ui/core/CardMedia"
-import Clear from "@material-ui/icons/Clear"
+// import Clear from "@material-ui/icons/Clear"
 import IconButton from "@material-ui/core/IconButton"
 import { withStyles, Chip } from "@material-ui/core"
 
