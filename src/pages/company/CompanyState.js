@@ -3,7 +3,7 @@ export const FORM_CHANGED = "Company/FORM_CHANGED";
 export const formChanged = e => ({
   type: FORM_CHANGED,
   value:e.target.value,
-  key:e.target.key
+  key:e.target.name
 });
 
 export default (state = null,action) => {

@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import FormCard from "./form"
+import FormCard from "./Form"
 import { formChanged } from "./CompanyState";
 
 const mapDispatchToProps = dispatch => ({

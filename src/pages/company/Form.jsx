@@ -5,6 +5,7 @@ const FormCard = props => {
   return(
     <Fragment>
       <TextField
+        name="test"
         onChange={props.handleChanged}
         margin="normal"
         variang="outlined"
