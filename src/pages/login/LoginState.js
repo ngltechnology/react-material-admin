@@ -4,6 +4,7 @@ import { authentication } from "../firebase"
 
 export const initialState = {
   isLoading: false,
+  isGoogleLoading: false,
   isAuthenticated: !!localStorage.getItem("id_token"),
   error: null
 };
@@ -61,7 +62,7 @@ export const loginUser = (login, password) => dispatch => {
 
 export const googleLogin = dispatch => {
   let provider = new firebase.auth.GoogleAuthProvider()
-  authentication.signInWithPopup(provider)
+  authentication.signInWithRedirect(provider)
     .then( user => {
       dispatch(googleLoginSuccess(user))
     })
@@ -109,10 +110,10 @@ export default function LoginReducer(state = initialState, { type, payload }) {
         isAuthenticated: false
       };
     case GOOGLE_LOGIN_SUCCESS:
-      return {
+      return Object.assign({},{
         ...state,
         currentUser: payload,
-      }
+      })
     case GOOGLE_LOGIN_ERROR:
       console.log(payload.error)
       return state
